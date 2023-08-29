@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Calculator</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+
+    <style>
+
+       body, html {
+        height: 100%;
+       }
+
+       body {
+            display: grid;
+            place-items: center;
+       }
+       
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            background-color: brown;
+            padding: 2em;
+            width: 20%;
+            border-radius: 4em;
+          
+           
+        }
+
+        .grid-container > div {
+
+            padding: 1em;
+            border: 1px solid blue;
+            background-color: black;
+            color: white;
+            text-align: center;
+            
+           
+        }
+
+        #mirror {
+            grid-column: 1 / span 4;
+            border-radius: 0.3em;
+            height: 1.5em;
+            color: black;
+            background-color: gainsboro;
+        }
+
+        .control1 {
+            grid-column: 1 / span 2;
+            height: 1.5em;
+        }
+
+        .control2 {
+            grid-column: 3 / span 2;
+            height: 1.5em;
+        }
+
+    </style>
+    
+</head>
+<body>
+    
+    <div class="grid-container">
+        
+        <div id="mirror"></div>
+        <div class="control1">CLEAR</div>
+        <div class="control2">DELETE</div>
+        <div class="numbers">7</div>
+        <div class="numbers">8</div>
+        <div class="numbers">9</div>
+        <div class="numbers">/</div>
+        <div class="numbers">4</div>
+        <div class="numbers">5</div>
+        <div class="numbers">6</div>
+        <div class="numbers">*</div>
+        <div class="numbers">1</div>
+        <div class="numbers">2</div>
+        <div class="numbers">3</div>
+        <div class="numbers">-</div>
+        <div class="numbers">0</div>
+        <div class="numbers">.</div>
+        <div class="numbers">+</div>
+        <div class="numbers">=</div>
+    </div>
+
+
+
+
+    <script>
+        function add(a,b) {
+            return a + b;
+        }
+
+        function subtract(a,b) {
+            return a-b;
+        }
+
+        function multiply(a,b) {
+            return a * b;
+        }
+
+        function divide(a,b) {
+            return a/b;
+        }
+    </script>
+    
+</body>
+</html>
