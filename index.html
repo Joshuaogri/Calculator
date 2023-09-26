@@ -41,7 +41,7 @@
            
         }
 
-        #mirror {
+        .mirror {
             grid-column: 1 / span 4;
             border-radius: 0.3em;
             height: 1.5em;
@@ -49,12 +49,12 @@
             background-color: gainsboro;
         }
 
-        .control1 {
+        #control1 {
             grid-column: 1 / span 2;
             height: 1.5em;
         }
 
-        .control2 {
+        #control2 {
             grid-column: 3 / span 2;
             height: 1.5em;
         }
@@ -64,11 +64,11 @@
 </head>
 <body>
     
-    <div class="grid-container">
+    <div class="grid-container" id="keep">
         
-        <div id="mirror"></div>
-        <div class="control1">CLEAR</div>
-        <div class="control2">DELETE</div>
+        <div class="mirror" id="display"></div>
+        <div class="numbers" id="control1">CLEAR</div>
+        <div class="numbers" id="control2">DELETE</div>
         <div class="numbers">7</div>
         <div class="numbers">8</div>
         <div class="numbers">9</div>
@@ -91,6 +91,9 @@
 
 
     <script>
+        let a;
+        let b;
+        let operator;
         function add(a,b) {
             return a + b;
         }
@@ -106,7 +109,51 @@
         function divide(a,b) {
             return a/b;
         }
+
+        /*function operator to call functions on numbers*/
+        let first;
+        let second;
+
+        function operate(a, operator, b) {
+
+            if (operator==="+") {
+                return add(a,b);
+            
+            } else if (operator==="-") {
+                return subtract(a,b);
+
+            } else if (operator==="*") {
+                return multiply(a,b);
+
+            } else if (operator==="/") {
+                return divide(a,b);
+
+            } else {
+                return "error";
+
+            }
+
+        }
+
+
+        //The below handles the first version of event listeners that try to specifically identify clicked divs with number class.
+        let numberBoard = document.getElementById("keep");
+        let board = [];
+        function mainClick(event) {
+            if (event.target.classList.contains("numbers")) {
+                let newView = event.target.textContent;
+                console.log(newView);
+                board.push(newView);
+            }
+        }
+        numberBoard.addEventListener("click", mainClick);
+
+
+      
     </script>
+
+
+
     
 </body>
 </html>
